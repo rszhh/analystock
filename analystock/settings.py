@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2020-12-02 16:39:05
-LastEditTime: 2020-12-05 11:08:35
+LastEditTime: 2020-12-05 20:23:53
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /analystock/analystock/settings.py
@@ -20,14 +20,6 @@ BOT_NAME = 'analystock'
 SPIDER_MODULES = ['analystock.spiders']
 NEWSPIDER_MODULE = 'analystock.spiders'
 
-# mongo
-MONGO_HOST = "39.96.85.141"  # 主机IP
-MONGO_PORT = 27017  # 端口号
-MONGO_DB = "spider"  # 库名
-#MONGO_COLL = "scrapy"  # collection名
-#MONGO_USER = "simple" #用户名
-#MONGO_PSW = "test" #用户密码
-
 # 设置随机UA
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.87 Safari/537.36"
 RANDOM_UA_TYPE = "random"
@@ -40,16 +32,16 @@ RANDOM_UA_TYPE = "random"
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# 如果多线程爬取数据，股票的排名会乱
-# 加入写入mongo之后仍然会乱
-# CONCURRENT_REQUESTS = 1
+# 如果多线程爬取数据，csv文件里股票的排名会乱
+# 但是导入到mongo db里顺序依然会有点乱序
+CONCURRENT_REQUESTS = 1
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 # 默认下载延迟，固定每次请求延时2s
 # DOWNLOAD_DELAY = 3
-# 如果想使用随机延迟，需要修改配置middelware
+# 如果想使用随机延迟，配置 SPIDER_MIDDLEWARES 和 middelware
 RANDOM_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
