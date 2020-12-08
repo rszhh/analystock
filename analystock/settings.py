@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2020-12-02 16:39:05
-LastEditTime: 2020-12-05 20:23:53
+LastEditTime: 2020-12-07 10:26:18
 LastEditors: Please set LastEditors
 Description: In User Settings Edit
 FilePath: /analystock/analystock/settings.py
@@ -33,7 +33,6 @@ ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # 如果多线程爬取数据，csv文件里股票的排名会乱
-# 但是导入到mongo db里顺序依然会有点乱序
 CONCURRENT_REQUESTS = 1
 
 # Configure a delay for requests for the same website (default: 0)

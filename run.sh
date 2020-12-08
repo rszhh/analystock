@@ -1,13 +1,19 @@
-#!/bin/bash
+#!/bin/sh
 ###
  # @Author: your name
  # @Date: 2020-12-05 20:02:42
- # @LastEditTime: 2020-12-05 21:17:08
+ # @LastEditTime: 2020-12-08 10:38:05
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /analystock/analy.sh
 ### 
-scrapy crawl stock
+
+. /etc/profile
+# source /etc/profile
+
+cd /home/zhaoh/pywork/analystock
+
+/home/zhaoh/.local/bin/scrapy crawl stock
 
 today=$(date +'%Y-%m-%d')
 
